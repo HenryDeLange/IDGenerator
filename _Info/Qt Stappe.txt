@@ -1,0 +1,14 @@
+
+Mens moet "static linking" doen, en dan vir die Qt build sê om dit te gebruik in plaas van die default dynamic een.
+
+Op die ou ent het hierdie link die meeste gehelp:
+    https://wiki.qt.io/Building_a_static_Qt_for_Windows_using_MinGW
+Wat mens basies doen:
+    1) Download die default dynamic Qt.
+    2) Download die (nuutste) PowerShell script (windows-build-qt-static.ps1) en run dit dan.
+        Ek het op die ou ent in CommandPromt die volgende getik:
+            powershell -ExecutionPolicy Bypass -file windows-build-qt-static.ps1 -MingwDir C:\Qt\Tools\mingw492_32
+        Mens kort glo ook 7Zip, maar ek het dit reeds gehad.
+    3) Add dan die nuwe static build as 'n Qt Version en Kit in Qt.
+    4) Doen dan die task wat die make file create ("Run qmake" of so iets).
+    5) Kies dan die nuwe Static Kit as die aktiewe opsie en doen 'n Build.
